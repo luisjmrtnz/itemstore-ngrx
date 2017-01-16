@@ -30,4 +30,14 @@ export class AppComponent {
   selectItem(item: Item){
     this.store.dispatch({ type: 'SELECT_ITEM', payload: item });
   }
+
+  saveItem(item: Item){
+    this.itemsService.updateItem(item);
+    this.resetItem();
+  }
+
+  resetItem(){
+    let emptyItem: Item = {id: null, name: '', description: ''};
+    this.store.dispatch({ type: 'SELECT_ITEM', payload: emptyItem });
+  }
 }

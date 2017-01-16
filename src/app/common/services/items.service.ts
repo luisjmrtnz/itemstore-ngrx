@@ -23,4 +23,8 @@ export class ItemsService {
         this.store.dispatch({ type: 'DELETE_ITEM', payload: item});
     }
 
+    updateItem(item: Item){
+        this.store.dispatch({ type: 'UPDATE_ITEM', payload: item });
+    }
+
 }

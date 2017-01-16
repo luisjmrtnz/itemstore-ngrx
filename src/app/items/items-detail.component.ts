@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Item } from '../common/models/item.model';
 
@@ -22,6 +22,9 @@ import { Item } from '../common/models/item.model';
                        placeholder="Enter the description"
                        [(ngModel)]="selectedItem.description">
             </div>
+            <div>
+                <button (click)="saved.emit(selectedItem)">Save</button>
+            </div>
         </div>
     `
 })
@@ -29,6 +32,8 @@ import { Item } from '../common/models/item.model';
 export class ItemsDetailComponent{
     originalName: string;
     selectedItem: Item;
+
+    @Output() saved = new EventEmitter<Item>();
     
     @Input() set item(value: Item){
         if(value) this.originalName = value.name;

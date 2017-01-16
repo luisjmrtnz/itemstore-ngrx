@@ -2,4 +2,5 @@
             (deleted)="deleteItem($event)"
             (selected)="selectItem($event)"></items-list>
 
-<items-detail [item]="selectedItem |async"></items-detail>
+<items-detail [item]="selectedItem |async"
+              (saved)="saveItem($event)"></items-detail>
