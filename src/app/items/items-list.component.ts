@@ -5,7 +5,7 @@ import { Item } from '../common/models/item.model';
 @Component({
     selector: 'items-list',
     template: `
-        <div *ngFor="let item of items">
+        <div *ngFor="let item of items" (click)="selected.emit(item)">
             <h2> {{ item.name }}</h2>
             <p> {{ item.description }} </p>
             <button (click)="deleted.emit(item); $event.stopPropagation()">Delete</button>
@@ -18,5 +18,6 @@ export class ItemsListComponent {
     items: Item[];
 
     @Output() deleted = new EventEmitter<Item>();
+    @Output() selected = new EventEmitter<Item>();
 
 }

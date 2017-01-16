@@ -5,10 +5,18 @@ import { Item } from '../common/models/item.model';
 @Component({
     selector: 'items-detail',
     template:`
-        <h2>It Works</h2>
+        <div>
+            <h2 *ngIf="selectedItem.id">Editing {{originalName}}</h2>
+        </div>
     `
 })
 
 export class ItemsDetailComponent{
-
+    originalName: string;
+    selectedItem: Item;
+    
+    @Input() set item(value: Item){
+        if(value) this.originalName = value.name;
+        this.selectedItem = Object.assign({}, value);
+    }
 }

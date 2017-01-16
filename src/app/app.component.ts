@@ -26,4 +26,8 @@ export class AppComponent {
   deleteItem(item: Item){
     this.itemsService.deleteItem(item);
   }
+
+  selectItem(item: Item){
+    this.store.dispatch({ type: 'SELECT_ITEM', payload: item });
+  }
 }
