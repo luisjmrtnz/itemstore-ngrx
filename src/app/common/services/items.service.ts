@@ -19,4 +19,8 @@ export class ItemsService {
         this.store.dispatch({ type: 'ADD_ITEMS', payload: initialItems });
     }
 
+    deleteItem(item: Item){
+        this.store.dispatch({ type: 'DELETE_ITEM', payload: item});
+    }
+
 }

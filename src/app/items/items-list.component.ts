@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Item } from '../common/models/item.model';
 
@@ -8,7 +8,7 @@ import { Item } from '../common/models/item.model';
         <div *ngFor="let item of items">
             <h2> {{ item.name }}</h2>
             <p> {{ item.description }} </p>
-            <button>Delete</button>
+            <button (click)="deleted.emit(item); $event.stopPropagation()">Delete</button>
         </div>
     `
 })
@@ -16,4 +16,7 @@ import { Item } from '../common/models/item.model';
 export class ItemsListComponent {
     @Input()
     items: Item[];
+
+    @Output() deleted = new EventEmitter<Item>();
+
 }

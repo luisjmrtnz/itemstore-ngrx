@@ -9,12 +9,14 @@ import { selectedItem } from './common/stores/selectedItem.store';
 import { AppComponent } from './app.component';
 import { ItemsService } from './common/services/items.service';
 import { ItemsListComponent } from './items/items-list.component';
+import { ItemsDetailComponent } from './items/items-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ItemsListComponent
+    ItemsListComponent,
+    ItemsDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,4 @@
-<items-list [items]="items | async "></items-list>
+<items-list [items]="items | async" 
+            (deleted)="deleteItem($event)"></items-list>
+
+<items-detail></items-detail>

@@ -22,4 +22,8 @@ export class AppComponent {
     this.selectedItem.subscribe(val => console.log(val));
     itemsService.loadItems();
   }
+
+  deleteItem(item: Item){
+    this.itemsService.deleteItem(item);
+  }
 }
