@@ -14,4 +14,9 @@ export class ItemsService {
         this.items = store.select('items');
     }
 
+    loadItems(){
+        let initialItems: Item[] = [];
+        this.store.dispatch({ type: 'ADD_ITEMS', payload: initialItems });
+    }
+
 }

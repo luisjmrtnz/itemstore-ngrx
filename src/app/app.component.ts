@@ -19,5 +19,7 @@ export class AppComponent {
               private store: Store<AppStore>) {
     this.items = this.itemsService.items;
     this.selectedItem = this.store.select('selectedItem');
+    this.selectedItem.subscribe(val => console.log(val));
+    itemsService.loadItems();
   }
 }
