@@ -7,6 +7,7 @@ import { StoreModule } from '@ngrx/store';
 import { items } from './common/stores/items.store';
 import { selectedItem } from './common/stores/selectedItem.store';
 import { AppComponent } from './app.component';
+import { ItemsService } from './common/services/items.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { AppComponent } from './app.component';
     HttpModule,
     StoreModule.provideStore({ items, selectedItem })
   ],
-  providers: [],
+  providers: [ItemsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
