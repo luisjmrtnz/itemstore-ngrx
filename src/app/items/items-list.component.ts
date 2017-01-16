@@ -6,7 +6,7 @@ import { Item } from '../common/models/item.model';
     selector: 'items-list',
     template: `
         <div *ngFor="let item of items">
-            <p> {{ item.name }}</p>
+            <h2> {{ item.name }}</h2>
             <p> {{ item.description }} </p>
             <button>Delete</button>
         </div>

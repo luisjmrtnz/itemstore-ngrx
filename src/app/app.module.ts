@@ -8,11 +8,13 @@ import { items } from './common/stores/items.store';
 import { selectedItem } from './common/stores/selectedItem.store';
 import { AppComponent } from './app.component';
 import { ItemsService } from './common/services/items.service';
+import { ItemsListComponent } from './items/items-list.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ItemsListComponent
   ],
   imports: [
     BrowserModule,
