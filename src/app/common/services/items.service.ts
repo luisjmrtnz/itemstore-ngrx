@@ -15,7 +15,7 @@ export class ItemsService {
     }
 
     loadItems(){
-        let initialItems: Item[] = [];
+        let initialItems: Item[] = [{ id: 2, name: "Pencil", description: "Good for the school"}];
         this.store.dispatch({ type: 'ADD_ITEMS', payload: initialItems });
     }
 
