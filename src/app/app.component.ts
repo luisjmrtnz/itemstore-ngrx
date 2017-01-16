@@ -32,7 +32,7 @@ export class AppComponent {
   }
 
   saveItem(item: Item){
-    this.itemsService.updateItem(item);
+    this.itemsService.saveItem(item);
     this.resetItem();
   }
 
